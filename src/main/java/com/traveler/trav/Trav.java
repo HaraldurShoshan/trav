@@ -10,19 +10,20 @@ public class Trav implements SparkApplication
 	public static void main(String[] args)
 	{	
 		staticFileLocation("/public");
-		SparkApplication traveler = new Trav();
+		SparkApplication trav = new Trav();
 
 		String port = System.getenv("PORT");
         if (port != null) {
             port(Integer.valueOf(port));
         }
 
-        traveler.init();
+        trav.init();
 	}
 
 	@Override
     public void init()
     {
+        // final Trav trav = new Trav();
     	post("/loginUser", (req, res) ->
     	{
     		User user = new User();

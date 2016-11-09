@@ -7,15 +7,15 @@ $(document).ready(function(){
 
 		if(!usrName || !usrPass)
 		{
-			$('#userBtn').attr('disabled', false);
+			$('#userBtn').attr('disabled', true);
 		}
 		else
 		{
-			$('#userBtn').attr('disabled', true);
+			$('#userBtn').attr('disabled', false);
 		}
 	});	
 
-	var form = $('#userForm');
+	var form = $('form');
     form.submit(function(event)
 	{
         var usrName = $('#userName').val();
@@ -25,10 +25,12 @@ $(document).ready(function(){
             url: form.attr('action'),
             data: 'userName=' + usrName + '&userPass=' + usrPass
         }).done(function(response) {
+        	console.log(usrName);
         	$('#usrLogo').text(usrName);
 			$('#usrLogo').removeClass('hidden');
 	        $('#logo').addClass('hidden');
-            $('#usrLogo').html(usrName.toUpperCase());
+	        $('#users').addClass('hidden');
+            $('#usrLogo').html(usrName);
 	        return false;
         }).fail(function() {
             console.log('Shit happened...');
