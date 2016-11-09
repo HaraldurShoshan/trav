@@ -1,19 +1,19 @@
 $(document).ready(function(){
-	$('#userBtn').attr('disabled', true);
+	// $('#userBtn').attr('disabled', true);
 
-	$('#userForm').change(function(){
-		var usrName = $('#userName').val();
-		var usrPass = $('#userPass').val();
+	// $('#userForm').change(function(){
+	// 	var usrName = $('#userName').val();
+	// 	var usrPass = $('#userPass').val();
 
-		if(!usrName || !usrPass)
-		{
-			$('#userBtn').attr('disabled', true);
-		}
-		else
-		{
-			$('#userBtn').attr('disabled', false);
-		}
-	});	
+	// 	if(!usrName || !usrPass)
+	// 	{
+	// 		$('#userBtn').attr('disabled', true);
+	// 	}
+	// 	else
+	// 	{
+	// 		$('#userBtn').attr('disabled', false);
+	// 	}
+	// });	
 
 	var form = $('form');
     form.submit(function(event)
@@ -29,7 +29,7 @@ $(document).ready(function(){
         	$('#usrLogo').text(usrName);
 			$('#usrLogo').removeClass('hidden');
 	        $('#logo').addClass('hidden');
-	        $('#users').addClass('hidden');
+	        // $('#users').addClass('hidden');
             $('#usrLogo').html(usrName);
 	        return false;
         }).fail(function() {
